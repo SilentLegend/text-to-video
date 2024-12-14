@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-to-Video</title>
+</head>
+<body>
+    <h1>Text-to-Video Generator</h1>
+    <form method="POST">
+        <label for="prompt">Enter a prompt:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <button type="submit">Generate Video</button>
+    </form>
+
+    <h2>Generated Videos</h2>
+    <ul>
+        {% for video in videos %}
+            <li>
+                <a href="/download/{{ video }}">{{ video }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

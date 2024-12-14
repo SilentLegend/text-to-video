@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  text_to_video:
+    image: localhost:5000/text-to-video:local
+    deploy:
+      replicas: 1
+    volumes:
+      - ./output:/app/output
+    ports:
+      - "8080:8080"
